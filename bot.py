@@ -31,10 +31,10 @@ SHORTLINKBOT = Client('ShortlinkBot',
 
 @SHORTLINKBOT.on_message(filters.command(['start','help']))
 async def start(_, update):
-    markup = InlineKeyboardMarkup([[InlineKeyboardButton("My Owner 👮", url=f"https://t.me/{OWNER}")]])
+    markup = InlineKeyboardMarkup([[InlineKeyboardButton("𝙈𝙮 𝙊𝙬𝙣𝙚𝙧👮", url=f"https://t.me/{OWNER}")]])
     await update.reply(
-        f"**Hi {update.chat.first_name}!**\n\n"
-        "I'm shortlink bot. Just send me link and get adsless short link",
+        f"**𝐇𝐢 {update.chat.first_name}!**\n\n"
+        "𝑰'𝒎 𝒔𝒉𝒐𝒓𝒕𝒍𝒊𝒏𝒌 𝒃𝒐𝒕. 𝑱𝒖𝒔𝒕 𝒔𝒆𝒏𝒅 𝒎𝒆 𝒍𝒊𝒏𝒌 𝒂𝒏𝒅 𝒈𝒆𝒕 𝒂𝒅𝒔𝒍𝒆𝒔𝒔 𝒔𝒉𝒐𝒓𝒕 𝒍𝒊𝒏𝒌",
         reply_markup=markup,
         quote=True)
 
@@ -46,8 +46,8 @@ async def link_handler(_, update):
         message = f"Something went wrong \n{Err}"
         await update.reply(message, quote=True)
         return
-    message = f"Here is your shortlink\n {shortened_url}"
-    markup = InlineKeyboardMarkup([[InlineKeyboardButton("Link 🔗", url=shortened_url)]])
+    message = f"𝙷𝚎𝚛𝚎 𝚒𝚜 𝚢𝚘𝚞𝚛 𝚜𝚑𝚘𝚛𝚝𝚕𝚒𝚗𝚔\n {shortened_url}"
+    markup = InlineKeyboardMarkup([[InlineKeyboardButton("ʟɪɴᴋ 🔗", url=shortened_url)]])
     # i don't think this bot with get sending message error so no need of exceptions
     await update.reply_text(text=message, reply_markup=markup, quote=True)
       
